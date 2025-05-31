@@ -6,7 +6,7 @@ const User = require('../models/user');
 // Rota para cadastro de usuário
 router.post('/', async function(req, res, next) {
   const { email, senha, primeiro_nome, sobrenome } = req.body;
-
+  console.log('📥 Dados recebidos no backend:', req.body);
   // Normalizando dados
   const emailNormalized = email?.trim().toLowerCase();
   const senhaNormalized = senha?.trim();
