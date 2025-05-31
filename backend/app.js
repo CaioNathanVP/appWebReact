@@ -4,6 +4,7 @@ const appRoutes = require('./routes/app');
 const loginRoutes = require('./routes/login');
 
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const app = express();
 
@@ -16,7 +17,7 @@ var path = require('path');
 // NOVO
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/MyMongoDB')
+mongoose.connect('mongodb://127.0.0.1:27017/banco_tarefas_react', )
   .then(() => {
     console.log('Conexão com o MongoDB estabelecida com sucesso.');
   })
@@ -36,18 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configuração do CORS
 // Configuração do CORS (corrigida)
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
-  );
-  next();
-});
+app.use(cors({
+  origin: 'http://localhost:5173', // ou '*' em dev
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 
 app.use('/tarefas', tarefasRoutes);
