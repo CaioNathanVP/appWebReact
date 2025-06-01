@@ -47,6 +47,7 @@ app.use(cors({
 app.use('/tarefas', tarefasRoutes);
 app.use('/user', userRoutes);
 app.use('/login', loginRoutes);
+
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler 

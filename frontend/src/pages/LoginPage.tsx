@@ -14,7 +14,8 @@ const LoginPage: React.FC = () => {
 
     try {
       const response = await login({ email, senha });
-      console.log('Login efetuado com sucesso:', response);
+      //  console.log('Login efetuado com sucesso:', response);
+      console.log('🔍 Resposta completa do login:', JSON.stringify(response, null, 2));
       navigate(`/usuario/${response.email}`);
     } catch (err: unknown) {
   if (typeof err === 'object' && err !== null && 'response' in err) {
