@@ -66,6 +66,8 @@ router.get("/id/:id", async (req, res) => {
 
 // POST: Criar nova tarefa associada a um usuário por e-mail
 router.post("/:email", async (req, res) => {
+
+  console.log("Criando nova tarefa para o usuário com e-mail:", req.params.email);
   try {
     const email = req.params.email;
     const { titulo } = req.body;
@@ -150,11 +152,12 @@ router.put("/:id", async (req, res) => {
 
 // DELETE: Deletar uma tarefa por ID
 router.delete("/:id", async (req, res) => {
+  console.log("deletando tarefa");
   try {
     const { id } = req.params;
 
     const tarefaDeletada = await Tarefa.findByIdAndDelete(id);
-
+    console.log("Tarefa deletada:", tarefaDeletada);
     if (!tarefaDeletada) {
       return res.status(404).json({
         mensagem: "Tarefa não encontrada",

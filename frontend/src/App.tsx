@@ -1,20 +1,19 @@
 // src/App.tsx
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RegisterPage from './pages/Register';
-import Header from './components/Header';
 import LoginPage from './pages/LoginPage';
 import UserDashboard from './pages/UserDashboard';
-
+import Header from './components/Header';
 
 function App() {
   return (
     <Router>
-      <Header /> {/* Aqui aparece o cabeçalho fixo */}
+      <Header />
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<div className='container'><center><h1>Bem vindo ao meu gerenciador de tarefas</h1></center></div>} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/usuario/:email" element={<UserDashboard />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/usuario/:emailEncoded" element={<UserDashboard />} />
       </Routes>
     </Router>
   );
