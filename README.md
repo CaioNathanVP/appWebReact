@@ -1,7 +1,8 @@
 
 ⚛️
-Esta é uma aplicação que venho desenvolvendo para aprender a trabalhar com web
-esta em especifico, é um trabalho refeito que antes estava escrito utilizando a MEAN stack (Mongodb, Express, Angular e nodeJS), agora reescrito substituindo Angular por React e Redux
+Esta é uma aplicação que venho desenvolvendo para aprender a trabalhar com web.
+Esta em especifico, é um trabalho refeito que antes estava escrito
+utilizando a MEAN stack (Mongodb, Express, Angular e nodeJS), agora reescrito substituindo Angular por React e Redux
 
  ▶️ Como executalo:
 
