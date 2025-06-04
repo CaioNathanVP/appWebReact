@@ -10,6 +10,6 @@ interface RegisterPayload {
 }
 
 export const registerUser = async (userData: RegisterPayload) => {
-  const response = await axios.post('/', userData);
+  const response = await axios.post('/user', userData);
   return response.data;
 };

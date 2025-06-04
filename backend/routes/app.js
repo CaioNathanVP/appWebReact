@@ -17,23 +17,6 @@ router.get('/node-mongodb-mongoose-user-busca', async (req, res, next) => {
     }
 });
 
-router.post('/node-mongodb-mongoose-user', async (req, res, next) => {
-
-    var emailVar = req.body.email;
-    var userObject = new User({
-        primeiro_nome: 'Stefano',
-        sobrenome: 'Silvestri',
-        senha: "segredo",
-        email: emailVar
-
-    });
-    await userObject.save();
-
-    res.redirect('/node-mongodb-mongoose-user');
-
-});
-
-
 router.get('/', (req, res, next) => {
     res.render('index');
 });
